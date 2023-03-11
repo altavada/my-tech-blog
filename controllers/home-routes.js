@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       pageContent,
       loggedIn: req.session.loggedIn,
     });
-    res.status(200).json(pageContent);
+    res.status(200).json(pageData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
