@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: wheat;
+}
+
+header {
+    overflow: hidden;
+    background-color: peru;
+    padding: 30px 15px;
+}
+
+h1 {
+    display: inline;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+
+.bar {
+    float: right;
+}
+
+.headerbtn {
+    float: left;
+    background-color: rgb(186, 129, 71);
+    color: wheat;
+    box-shadow: 0px 0px 10px 8px rgb(186, 129, 71);
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px;
+}
+
+.headerbtn:hover {
+    box-shadow: 0px 0px 8px 7px rgb(151, 104, 57);
+    background-color: rgb(151, 104, 57);
+    color: rgb(230, 209, 170);
+}
+
+.headerbtn:active {
+    color: rgb(197, 185, 164);
+}
+
+.you {
+    float: left;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 12px;
+}
+
+main {
+    padding: 20px;
+}
+
+.post-container {
+    border: 5px solid;
+    border-radius: 20px;
+    width: 75%;
+    padding: 0px 20px;
+    margin: auto;
+    background-color: rgb(255, 239, 209);
+}
+
+h2 {
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+.post-dash {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 5px;
+    background-color: rgb(216, 182, 147);
+    color: wheat;
+    box-shadow: 0px 0px 5px 5px rgb(215, 183, 151);
+    margin: 4px;
+    line-height: 5px;
+}

@@ -6,7 +6,7 @@ User.hasMany(Post, {
   foreignKey: 'author_id',
 });
 
-Post.hasOne(User, {
+Post.belongsTo(User, {
   foreignKey: 'author_id',
 });
 
@@ -14,7 +14,7 @@ User.hasMany(Comment, {
   foreignKey: 'author_id',
 });
 
-Comment.hasOne(User, {
+Comment.belongsTo(User, {
   foreignKey: 'author_id',
 });
 
