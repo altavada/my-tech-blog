@@ -11,11 +11,15 @@ router.get('/', async (req, res) => {
       return;
     }
     const pageContent = pageData.map((post) => post.get({ plain: true }));
-    res.render('posts', {
-      pageContent,
-      loggedIn: req.session.loggedIn,
-    });
-    res.status(200).json(pageData);
+    if (req.session.loggedIn) {
+      res.render('posts', {
+        pageContent,
+        loggedIn: req.session.loggedIn,
+      });
+      res.status(200).json(pageData);
+    } else {
+      res.redirect('/login');
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
