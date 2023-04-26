@@ -3,10 +3,54 @@
             <div class="bar">
                 <span class="you" id="newpost"><span class="tooltip">new post</span>+</span>
                 <span class="you">@Username</span>
-                <a class="headerbtn">login</a>
+                <a id="logout" class="headerbtn">logout</a>
             </div>
         </header>
         <main>
+            {{#each pageContent as |post|}}
+            <br>
+            <div class="post-container">
+                <div class="title-card">
+                    <h2>{{post.title}}</h2>
+                    <h3>by @<span>{{post.user.name}}</span></h3>
+                </div>
+                <div class="post-card">
+                    <p>
+                        {{post.body}}
+                    </p>
+                </div>
+                <div class="post-dash">
+                    <a class="btn">comments</a>
+                    <a class="btn">edit</a>
+                    <a class="btn">delete</a>
+                </div>
+                <div class="comment-wrapper">
+                    {{#each post.comments as |comment|}}
+                    <div class="comment-container">
+                        <div class="comment-card">
+                            <p>
+                                {{comment.body}}
+                            </p>
+                        </div>
+                        <div class="comment-by">
+                            <p> – @<span>{{comment.user.name}}</span></p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <br>
+            {{/each}}
+            
+        </main>
+
+
+
+
+
+
+
+
             <br>
             <div class="post-container">
                 <div class="title-card">
@@ -36,6 +80,4 @@
                     </div>
                 </div>
             </div>
-            <br><br>
-            
-        </main>
+            <br>

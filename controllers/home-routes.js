@@ -4,26 +4,34 @@ const { User, Post, Comment } = require('../models');
 router.get('/', async (req, res) => {
   try {
     const pageData = await Post.findAll({
-      include: [{ all: true }],
+      order: [['id', 'DESC']],
+      include: [
+        { model: User, as: 'user' },
+        {
+          model: Comment,
+          as: 'comments',
+          include: [{ model: User, as: 'user' }],
+        },
+      ],
     });
     if (!pageData) {
       res.status(404).json({ message: 'Data not found.' });
       return;
     }
     const pageContent = pageData.map((post) => post.get({ plain: true }));
+    console.log(pageContent[0].comments);
     if (req.session.loggedIn) {
       res.render('posts', {
         pageContent,
         loggedIn: req.session.loggedIn,
       });
-      res.status(200).json(pageData);
     } else {
       res.redirect('/login');
     }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
-  } 
+  }
 });
 
 router.get('/login', (req, res) => {
