@@ -17,7 +17,7 @@ const signupHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Error.');
+      alert('Signup Error.');
     }
   }
 };
