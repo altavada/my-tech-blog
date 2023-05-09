@@ -1,6 +1,26 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
+// get new post page
+router.get('/', async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      res.render('post', {
+        header: 'New Post',
+        title: null,
+        body: null,
+        postId: '0',
+        mode: 'submit-new',
+      });
+    } else {
+      res.redirect('/login');
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // new post
 router.post('/', async (req, res) => {
   try {
