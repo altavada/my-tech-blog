@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User } = require('../../models');
 
 // get new post page
 router.get('/', async (req, res) => {
@@ -24,10 +24,13 @@ router.get('/', async (req, res) => {
 // get update post page
 router.get('/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, {
+      include: { model: User, as: 'user' },
+    });
     const post = postData.get({ plain: true });
-    if (post.author_id == req.session.user) {
-      res.render('new', {
+    console.log('Post: ', post);
+    if (post.user.name == req.session.user) {
+      res.render('post', {
         header: 'Edit Post',
         title: post.title,
         body: post.body,
@@ -35,7 +38,7 @@ router.get('/:id', async (req, res) => {
         mode: 'submit-edit',
       });
     } else {
-      res.redirect('/');
+      // res.redirect('/');
     }
   } catch (err) {
     console.log(err);

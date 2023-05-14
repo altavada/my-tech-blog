@@ -3,8 +3,15 @@ document
   .getElementById('newpost')
   .addEventListener('click', () => window.location.replace('/api/post'));
 
+// edit post btn
+document.querySelectorAll('.editbtn').forEach((item) => {
+  item.addEventListener('click', (event) => {
+    const id = event.target.getAttribute('data-id');
+    window.location.replace(`/api/post/${id}`);
+  });
+});
 
- // comment thread toggle 
+// comment thread toggle
 document.querySelectorAll('.commentbtn').forEach((item) => {
   item.addEventListener('click', (event) => {
     const id = event.target.getAttribute('data-id');
