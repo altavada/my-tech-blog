@@ -1,7 +1,10 @@
+// new post btn
 document
   .getElementById('newpost')
   .addEventListener('click', () => window.location.replace('/api/post'));
 
+
+ // comment thread toggle 
 document.querySelectorAll('.commentbtn').forEach((item) => {
   item.addEventListener('click', (event) => {
     const id = event.target.getAttribute('data-id');
@@ -17,6 +20,7 @@ document.querySelectorAll('.commentbtn').forEach((item) => {
   });
 });
 
+// comment reply box toggle
 document.querySelectorAll('.replybtn').forEach((item) => {
   item.addEventListener('click', (event) => {
     const id = event.target.getAttribute('data-id');

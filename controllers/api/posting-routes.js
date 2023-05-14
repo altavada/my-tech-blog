@@ -21,6 +21,28 @@ router.get('/', async (req, res) => {
   }
 });
 
+// get update post page
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+    const post = postData.get({ plain: true });
+    if (post.author_id == req.session.user) {
+      res.render('new', {
+        header: 'Edit Post',
+        title: post.title,
+        body: post.body,
+        postId: post.id,
+        mode: 'submit-edit',
+      });
+    } else {
+      res.redirect('/');
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // new post
 router.post('/', async (req, res) => {
   try {
