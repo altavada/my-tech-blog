@@ -19,11 +19,13 @@ router.get('/', async (req, res) => {
       return;
     }
     const pageContent = pageData.map((post) => post.get({ plain: true }));
-    console.log(pageContent[0].comments);
+    console.log('Page Content: ', pageContent);
+    console.log('Current User: ', req.session.user);
     if (req.session.loggedIn) {
       res.render('posts', {
         pageContent,
-        loggedIn: req.session.loggedIn,
+        loggedIn: true,
+        currentUser: req.session.user,
       });
     } else {
       res.redirect('/login');

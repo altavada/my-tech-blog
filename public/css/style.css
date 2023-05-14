@@ -20,6 +20,10 @@ h1 {
     padding: 10px;
 }
 
+h1:hover {
+    text-decoration: underline;
+}
+
 .bar {
     float: right;
 }
@@ -98,6 +102,10 @@ h3 {
 
 .btn:active {
     color: rgb(231, 204, 153);
+}
+
+.btncontainer {
+    padding: 10px;
 }
 
 .comment-wrapper {
