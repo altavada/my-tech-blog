@@ -4,7 +4,8 @@
             <div class="post-container">
                 <div class="title-card">
                     <h2>{{post.title}}</h2>
-                    <h3>by @<span>{{post.user.name}}</span></h3>
+                    <h3>by @<span id="currentuser">{{post.user.name}}</span></h3>
+                    <b>{{post.createdAt}}</b>
                 </div>
                 <div class="post-card">
                     <p>
@@ -31,16 +32,16 @@
                         </div>
                     </div>
                     {{/each}}
-                    <div class="comment-container">
+                    <div class="comment-container" id="replybox{{post.id}}">
                         <div class="btncontainer">
                             <br>
                             <a class="btn replybtn" data-id="{{post.id}}" data-state="closed">leave comment</a>
                         </div>
                         <br>
                         <form id="replyto{{post.id}}" style="display: none;">
-                            <textarea placeholder="Write comment..."></textarea>
+                            <textarea placeholder="Write comment..." id="writefor{{post.id}}"></textarea>
                             <div class="btncontainer">
-                                <a class="btn replybtn" data-id="{{post.id}}">send</a>
+                                <a class="btn submitreply" data-id="{{post.id}}">send</a>
                             </div>
                         </form>
                     </div>

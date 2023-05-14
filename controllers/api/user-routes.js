@@ -28,22 +28,24 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-    console.log('User data:', userData);
+    // console.log('User data:', userData);
     if (!userData) {
       res.status(400).json({ message: 'Incorrect email or password.' });
       return;
     }
     const validPassword = await userData.checkPassword(req.body.password);
-    console.log('Valid pass', validPassword);
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect email or password.' });
       return;
     }
+    console.log('userdata id: ', userData.id);
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user = userData.name;
+      req.session.userId = userData.id;
       res.status(200).json(userData);
     });
+    console.log('session id: ', req.session.userId);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
