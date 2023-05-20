@@ -12,7 +12,7 @@
             {{#if loggedIn}}
             <div class="bar">
                 <span class="you" id="newpost"><span class="tooltip">new post</span>+</span>
-                <span class="you">@{{currentUser}}</span>
+                <span class="you">@<span id="currentuser">{{currentUser}}</span></span>
                 <a id="logout" class="headerbtn">logout</a>
             </div>
             {{/if}}
