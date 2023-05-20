@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Description
 This is a full-stack MVC application presenting a simple, functional internet blog / messageboard, using a MySQL database, Express.js, and Handlebars.js.
-![Sample screenshot of deployed site](./img/sample.png)
+![Sample screenshot of deployed site](./assets/sample.png)
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
