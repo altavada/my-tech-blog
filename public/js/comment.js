@@ -30,6 +30,7 @@ document.querySelectorAll('.submitreply').forEach((item) => {
           newCommentBox.setAttribute('class', 'comment-container');
           newCommentBox.innerHTML = content;
           threadBox.insertBefore(newCommentBox, replyBox);
+          replyText.value = null;
         } else {
           alert('Error posting comment.');
         }
