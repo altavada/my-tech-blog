@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
         body: null,
         postId: '0',
         mode: 'submit-new',
+        new: true,
       });
     } else {
       res.redirect('/login');
@@ -36,9 +37,10 @@ router.get('/:id', async (req, res) => {
         body: post.body,
         postId: post.id,
         mode: 'submit-edit',
+        new: false,
       });
     } else {
-      // res.redirect('/');
+      res.redirect('/');
     }
   } catch (err) {
     console.log(err);

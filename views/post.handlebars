@@ -15,4 +15,8 @@
     </form>
     <br>
 </div>
-<script src="/js/post.js"></script>
+{{#if new}}
+<script src="/js/newpost.js"></script>
+{{else}}
+<script src="/js/editpost.js"></script>
+{{/if}}
