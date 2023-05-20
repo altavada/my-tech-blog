@@ -1,0 +1,22 @@
+<br>
+<br>
+<div class="post-container">
+    <h2>{{header}}</h2>
+    <form>
+        <div>
+            <input type="text" id="edit-title" value="{{title}}" placeholder="Title...">
+        </div>
+        <br>
+        <div>
+            <textarea id="edit-body" placeholder="Body..." rows="7" cols="75">{{body}}</textarea>
+        </div>
+        <br>
+        <a class="btn" id="{{mode}}" data-id="{{postId}}">submit</a>
+    </form>
+    <br>
+</div>
+{{#if new}}
+<script src="/js/newpost.js"></script>
+{{else}}
+<script src="/js/editpost.js"></script>
+{{/if}}

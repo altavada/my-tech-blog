@@ -1,0 +1,57 @@
+        <main>
+            {{#each pageContent as |post|}}
+            <br>
+            <div class="post-container">
+                <div class="title-card">
+                    <h2>{{post.title}}</h2>
+                    <h3>by @<span id="currentuser">{{post.user.name}}</span></h3>
+                    <b>{{post.createdAt}}</b>
+                </div>
+                <div class="post-card">
+                    <p>
+                        {{post.body}}
+                    </p>
+                </div>
+                <div class="post-dash">
+                    <a class="btn commentbtn" data-id="{{post.id}}" data-state="closed">comments</a>
+                    {{#ifEquals post.user.name ../currentUser}}
+                    <a class="btn editbtn" data-id="{{post.id}}">edit</a>
+                    <a class="btn deletebtn" data-id="{{post.id}}">delete</a>
+                    {{/ifEquals}}
+                </div>
+                <div class="comment-wrapper" style="display: none;" id="comments{{post.id}}">
+                    {{#each post.comments as |comment|}}
+                    <div class="comment-container">
+                        <div class="comment-card">
+                            <p>
+                                {{comment.body}}
+                            </p>
+                        </div>
+                        <div class="comment-by">
+                            <p> – @<span>{{comment.user.name}}</span></p>
+                        </div>
+                    </div>
+                    {{/each}}
+                    <div class="comment-container" id="replybox{{post.id}}">
+                        <div class="btncontainer">
+                            <br>
+                            <a class="btn replybtn" data-id="{{post.id}}" data-state="closed">leave comment</a>
+                        </div>
+                        <br>
+                        <form id="replyto{{post.id}}" style="display: none;">
+                            <textarea placeholder="Write comment..." id="writefor{{post.id}}"></textarea>
+                            <div class="btncontainer">
+                                <a class="btn submitreply" data-id="{{post.id}}">send</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {{/each}}
+            
+        </main>
+        <script src="/js/logout.js"></script>
+        <script src="/js/comment.js"></script>
+        <script src="/js/delete.js"></script>
+        <script src="/js/home.js"></script>

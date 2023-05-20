@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS mytech_db;
+CREATE DATABASE mytech_db;

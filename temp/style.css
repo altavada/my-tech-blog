@@ -1,0 +1,176 @@
+* {
+    color: rgba(0, 0, 0, 0.704);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: wheat;
+}
+
+header {
+    overflow: hidden;
+    background-color: peru;
+    padding: 30px 15px;
+}
+
+h1 {
+    display: inline;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+
+.bar {
+    float: right;
+}
+
+.headerbtn {
+    float: left;
+    background-color: rgb(186, 129, 71);
+    color: wheat;
+    box-shadow: 0px 0px 10px 8px rgb(186, 129, 71);
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px;
+}
+
+.headerbtn:hover {
+    box-shadow: 0px 0px 8px 7px rgb(151, 104, 57);
+    background-color: rgb(151, 104, 57);
+    cursor: pointer;
+}
+
+.headerbtn:active {
+    color: rgb(217, 189, 138);
+}
+
+.you {
+    float: left;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 12px;
+}
+
+main {
+    padding: 20px;
+}
+
+.post-container {
+    border: 5px solid;
+    border-radius: 20px;
+    width: 75%;
+    padding: 0px 20px;
+    margin: auto;
+    background-color: rgb(255, 239, 209);
+}
+
+h2 {
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+.post-dash {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 5px;
+    background-color: rgb(215, 183, 151);
+    color: wheat;
+    box-shadow: 0px 0px 5px 5px rgb(215, 183, 151);
+    margin: 4px;
+    line-height: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 4px rgb(169, 144, 119);
+    background-color: rgb(169, 144, 119);
+}
+
+.btn:active {
+    color: rgb(231, 204, 153);
+}
+
+.comment-wrapper {
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(224, 206, 172);
+}
+
+.comment-wrapper a {
+    background-color: rgb(188, 170, 138);
+    box-shadow: 0px 0px 5px 5px rgb(188, 170, 138);
+    color: rgb(224, 206, 172);
+}
+
+.comment-wrapper a:active {
+    color: rgb(238, 225, 196);
+}
+
+.comment-container {
+    border-top: 1px solid grey;
+}
+
+.comment-by {
+    margin-left: 15px;
+}
+
+.new-comment {
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+}
+
+.comment-dash {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#newpost {
+    font-size: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.704);
+    color: rgba(255, 216, 183, 0.706);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 24px;
+    position: absolute;
+    z-index: 1;
+    top: 6px;
+    right: 105%;
+}
+
+#newpost:hover {
+    cursor: pointer;
+    color: rgba(255, 213, 181, 0.501);
+}
+
+#newpost:active {
+    color: rgba(0, 0, 0, 0.21);
+}
+
+#newpost:hover .tooltip {
+    visibility: visible;
+}
+
+.login-card {
+    margin-bottom: 20px;
+}

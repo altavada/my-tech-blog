@@ -19,7 +19,14 @@ const app = express();
 // sets constant equal to application port
 const PORT = process.env.PORT || 3001;
 // incorporate custom helper methods
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
+// register helper
+hbs.handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
+  console.log('Author arg: ', arg1);
+  console.log('Current user arg: ', arg2);
+  console.log('Helper options: ', options);
+  return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+});
 // sets up session
 const sess = {
   // sets secret to sign session ID's
