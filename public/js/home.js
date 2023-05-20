@@ -20,9 +20,11 @@ document.querySelectorAll('.commentbtn').forEach((item) => {
     if (state === 'closed') {
       box.style.display = 'block';
       event.target.setAttribute('data-state', 'open');
+      event.target.innerHTML = 'comments (-)'
     } else {
       box.style.display = 'none';
       event.target.setAttribute('data-state', 'closed');
+      event.target.innerHTML = 'comments (+)'
     }
   });
 });
