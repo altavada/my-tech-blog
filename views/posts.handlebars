@@ -16,7 +16,7 @@
                     <a class="btn commentbtn" data-id="{{post.id}}" data-state="closed">comments</a>
                     {{#ifEquals post.user.name ../currentUser}}
                     <a class="btn editbtn" data-id="{{post.id}}">edit</a>
-                    <a class="btn" data-id="{{post.id}}">delete</a>
+                    <a class="btn deletebtn" data-id="{{post.id}}">delete</a>
                     {{/ifEquals}}
                 </div>
                 <div class="comment-wrapper" style="display: none;" id="comments{{post.id}}">
@@ -52,4 +52,6 @@
             
         </main>
         <script src="/js/logout.js"></script>
+        <script src="/js/comment.js"></script>
+        <script src="/js/delete.js"></script>
         <script src="/js/home.js"></script>

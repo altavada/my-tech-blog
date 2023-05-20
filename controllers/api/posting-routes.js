@@ -102,6 +102,7 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'Unable to delete post.' });
       return;
     }
+    res.status(200).json(target)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
